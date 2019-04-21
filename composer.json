@@ -1,0 +1,16 @@
+{
+    "name": "kyle/php-root",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.3.0",
+        "phpunit/php-timer": "^2.1@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "HelloWorld": "src/"
+        },
+        "classname": {
+            "PHP_Timer": "src/"
+        }
+    }
+}
