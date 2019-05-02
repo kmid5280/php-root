@@ -1,10 +1,11 @@
 <html>
     <head>
         <title>PHP Test</title>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         
-        <form action="action.php" method="post">
+        <form class="index-form" action="action.php" method="post">
             <p>Your first name: <input type="text" name="firstname" /></p>
             <p>Your last name: <input type="text" name="lastname" /></p>
             <p><input type="submit" /></p>
