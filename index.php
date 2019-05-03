@@ -10,6 +10,39 @@
             <p>Your last name: <input type="text" name="lastname" /></p>
             <p><button type="submit">Submit</button></p>
         </form>
+
+        <h2>Current Guests</h2>
+        <?php
+        echo "<table style='border: solid 1px black;'>";
+        echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th></tr>";
+        class TableRows extends RecursiveIteratorIterator {
+            function __construct($it) {
+                parent::__construct($it, self::LEAVES_ONLY);
+            }
+
+            function current() {
+                return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+                
+            }
+
+            function beginChildren() {
+                echo "<tr>";
+            }
+
+            function endChildren() {
+                echo "<tr>" . "\n";
+            }
+        }
+        require __DIR__ . '/vendor/autoload.php';
+        $dotenv = Dotenv\Dotenv::create(__DIR__);
+        $dotenv->load();
+        $servername = getenv('servername');
+        $username = getenv('username');
+        $password = getenv('password');
+        $dbname = getenv('dbname');
+
+
+        ?>
         <?php
             if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) {
                 echo 'You are using MSIE.';
