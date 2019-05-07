@@ -13,6 +13,7 @@
 
         <h2>Current Guests</h2>
         <?php
+        //test comment added
         echo "<table style='border: solid 1px black;'>";
         echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th></tr>";
         class TableRows extends RecursiveIteratorIterator {
